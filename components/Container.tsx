@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import cn from 'classnames';
 
@@ -37,16 +38,18 @@ function Container(props: any) {
 
   return (
     <div className="bg-green-50 dark:bg-gray-900">
-      {/* <div>
-        <img className="rounded-full h-20 w-20" src="/images/avatar.png"></img>
-      </div> */}
-      <div className="flex flex-col justify-center px-8">
-        <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
-          <a href="#skip" className="skip-nav">
-            {/* Skip to content */}
-          </a>
+      <div className="flex flex-col px-8 pb-4 pt-4">
+        <nav className="flex flex-row justify-between w-full relative border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
+          <div className="flex flex-row items-center gap-4">
+            <Image
+              src="/images/avatar.png"
+              height={48}
+              width={48}
+              className="rounded-full filter"
+            ></Image>
+            <h1 className="font-bold text-base">@ercwang</h1>
+          </div>
           <div className="ml-[-0.60rem]">
-            {/* <MobileMenu /> */}
             <NavItem href="/" text="Home" />
             <NavItem href="/blog" text="Blog" />
           </div>
@@ -88,7 +91,7 @@ function Container(props: any) {
       </div>
       <main
         id="skip"
-        className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
+        className="flex flex-col justify-center px-8 pt-10 bg-gray-50 dark:bg-gray-900"
       >
         {children}
         <Footer />
