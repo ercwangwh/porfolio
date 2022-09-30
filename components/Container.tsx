@@ -1,12 +1,12 @@
 // import React from 'react';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import { useTheme } from 'next-themes';
-import Image from 'next/image';
-import NextLink from 'next/link';
-import cn from 'classnames';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import NextLink from "next/link";
+import cn from "classnames";
 
-import Footer from '../components/Footer';
+import Footer from "../components/Footer";
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
@@ -17,9 +17,9 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <a
         className={cn(
           isActive
-            ? 'font-semibold text-gray-800 dark:text-gray-200'
-            : 'font-normal text-gray-600 dark:text-gray-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
+            ? "font-semibold text-gray-800 dark:text-gray-200"
+            : "font-normal text-gray-600 dark:text-gray-400",
+          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
         )}
       >
         <span className="capsize">{text}</span>
@@ -37,7 +37,7 @@ function Container(props: any) {
   const { children, ...customMeta } = props;
 
   return (
-    <div className="bg-green-50 dark:bg-gray-900">
+    <div className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col px-8 pb-4 pt-4">
         <nav className="flex flex-row justify-between w-full relative border-gray-200 dark:border-gray-700 mx-auto pt-4 pb-4 text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
           <div className="flex flex-row items-center gap-4">
@@ -58,7 +58,7 @@ function Container(props: any) {
             type="button"
             className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
             onClick={() =>
-              setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
           >
             {mounted && (
@@ -69,7 +69,7 @@ function Container(props: any) {
                 stroke="currentColor"
                 className="w-5 h-5 text-gray-800 dark:text-gray-200"
               >
-                {resolvedTheme === 'dark' ? (
+                {resolvedTheme === "dark" ? (
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -91,7 +91,7 @@ function Container(props: any) {
       </div>
       <main
         id="skip"
-        className="flex flex-col justify-center px-8 pt-10 bg-gray-50 dark:bg-gray-900"
+        className="flex flex-col justify-start px-8 pt-10 bg-gray-50 dark:bg-gray-900"
       >
         {children}
         <Footer />
