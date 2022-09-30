@@ -5,6 +5,8 @@ import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
 import cn from 'classnames';
 
+import Footer from '../components/Footer';
+
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -25,13 +27,13 @@ function NavItem({ href, text }: { href: string; text: string }) {
   );
 }
 
-function Container() {
+function Container(props: any) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
-  // const { children, ...customMeta } = props;
+  const { children, ...customMeta } = props;
 
   return (
     <div className="bg-green-50 dark:bg-gray-900">
@@ -84,6 +86,13 @@ function Container() {
           </button>
         </nav>
       </div>
+      <main
+        id="skip"
+        className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
+      >
+        {children}
+        <Footer />
+      </main>
     </div>
   );
 }
