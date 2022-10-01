@@ -91,7 +91,7 @@ function Container(props: any) {
       </div>
       <main
         id="skip"
-        className="flex flex-col justify-start px-8 pt-10 bg-gray-50 dark:bg-gray-900"
+        className="flex flex-col gap-8 justify-start px-8 pt-10 bg-gray-50 dark:bg-gray-900"
       >
         {children}
         <Footer />
