@@ -33,7 +33,11 @@ function Container(props: any) {
   const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setTheme("dark");
+    setMounted(true);
+  }, []);
+
   const { children, ...customMeta } = props;
 
   return (
