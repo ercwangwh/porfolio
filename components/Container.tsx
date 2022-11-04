@@ -55,7 +55,7 @@ function Container(props: any) {
           </div>
           <div className="ml-[-0.60rem]">
             <NavItem href="/" text="Home" />
-            <NavItem href="/blog" text="Blog" />
+            {/* <NavItem href="/blog" text="Blog" /> */}
           </div>
           <button
             aria-label="Toggle Dark Mode"
